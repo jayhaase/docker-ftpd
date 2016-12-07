@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# The container has two volumes, one for the FTP user's files, and one for the configuration of Pure FTPD.
+
+# This script will setup the Pure FTPD volume (./volumes/pureftd) with the user "user" and password "password"
+# This script must be run while the container is running.
+
+# Correct the directory owner.
+docker exec -it pure-ftpd chown ftpuser:ftpuser -R /home/ftpuser
+
+# Add a new FTP account/user. This will prompt you for a new password.
+docker exec -it pure-ftpd pure-pw useradd user -m -u ftpuser -d /home/ftpuser/user

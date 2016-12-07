@@ -1,0 +1,16 @@
+# mysqldump credentials
+bin/.mysql.cnf
+
+# Docker volumes with transient data
+volumes/mysql/
+volumes/mysql_import/
+
+# OS X generated files
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.diff
+.com.apple.timemachine.supported
